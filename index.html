@@ -1,9 +1,10 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v3.5</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v3.6</title><style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0d1c29;color:#eef6fa;font:15px system-ui,-apple-system,sans-serif}header{padding:12px 15px;background:#18344a;display:flex;justify-content:space-between;align-items:center;gap:10px}header b{font-size:18px}.tag{font-size:11px;color:#b5d8e8}.wrap{max-width:850px;margin:auto}.view{position:relative;background:#060e16;aspect-ratio:4/3;overflow:hidden}video,canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene{position:absolute;inset:0;transform-origin:center}canvas{pointer-events:none}.hud{position:absolute;top:9px;left:9px;background:#0a2232c9;padding:7px 9px;border-radius:8px;font-size:12px;line-height:1.6}.cross{position:absolute;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);pointer-events:none}.cross:before,.cross:after{content:"";position:absolute;background:#ffffffa8}.cross:before{width:18px;height:1px;top:9px}.cross:after{height:18px;width:1px;left:9px}.panel{padding:12px 14px;border-bottom:1px solid #2b4d63}h3{margin:0 0 10px;font-size:15px}button{border:0;border-radius:10px;background:#54b3d0;color:#082435;padding:11px 13px;font-weight:700;font-size:14px;cursor:pointer}button.primary{background:#64d8b5}button.warn{background:#f0c56a}button:disabled{opacity:.45}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons>*{flex:1 1 135px}label{display:block;margin:9px 0 5px}input[type=range]{width:100%;accent-color:#56c9e2}small,.hint{color:#b9cedb;font-size:12px;line-height:1.55}.metric{font-variant-numeric:tabular-nums;color:#8be6d5}#message{background:#213b4c;border-radius:8px;padding:10px;min-height:43px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.map{height:185px;position:relative;overflow:hidden;border-radius:9px;background:#243e4e}.map img{width:100%;height:100%;object-fit:cover}.map span{position:absolute;bottom:6px;left:7px;background:#102634d9;font-size:11px;padding:4px;border-radius:4px}details summary{cursor:pointer;font-weight:700}footer{padding:12px 14px;color:#a6becd;font-size:11px;line-height:1.5}.fine{display:flex;align-items:center;gap:7px}.fine button{padding:8px 12px;min-width:42px}.fine input{flex:1;min-width:20px}#progress{height:5px;background:#274658;border-radius:4px;overflow:hidden;margin-top:8px}#bar{height:100%;background:#66d4b4;width:0%}@media(max-width:440px){.view{aspect-ratio:3/4}button{font-size:13px;padding:10px 8px}.grid{grid-template-columns:1fr 1fr}}
 .viewAction{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:95%}.viewAction button{box-shadow:0 2px 10px #0008;padding-inline:22px}button,.fine button,select{min-height:44px}button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid white;outline-offset:2px}.view{max-height:62svh}.hud summary{padding:4px;cursor:pointer}.actions #message{margin:0;padding:3px 0;min-height:0;background:none}.actions #progress{margin:0 0 8px}.actions #matchActions:not([hidden]){display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}.actions #matchActions button{flex:1 1 auto}.actions #cancelMatch{background:transparent;color:white;border:1px solid #7794a6}.fine input[type=range]{min-height:36px}details>summary{min-height:36px;align-content:center}
 body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;background:#101920}.scene{touch-action:none}.cross{pointer-events:none}.wrap>header{position:fixed;z-index:2;top:max(10px,env(safe-area-inset-top));left:12px;background:#091621b8;border-radius:13px;padding:7px 10px;pointer-events:none}.wrap>header .tag:last-child{display:none}.wrap>header>div:first-child{display:flex;align-items:center;gap:8px}.wrap>header>div:first-child .tag{display:block}.wrap>header b{font-size:14px}.hud{top:auto;bottom:max(12px,env(safe-area-inset-bottom));left:10px;z-index:1}.hud summary{min-height:32px}.actions{position:fixed;z-index:2;bottom:max(9px,env(safe-area-inset-bottom));right:10px;left:10px;border:0;background:none;padding:0;display:flex;align-items:flex-end;flex-direction:column;gap:6px;pointer-events:none}.actions button,.actions output{pointer-events:auto}.actions button,#settings{background:#142633de;color:white;border:1px solid #ffffff65;border-radius:24px;padding:8px 14px;box-shadow:0 1px 5px #0006}.actions button.primary{background:#b4f3dc;color:#092b20}.viewAction{position:static;transform:none;max-width:none;width:auto}.actions>.fine{margin:0!important;gap:0}.actions>.fine span{display:none}.actions output{padding:7px;color:white;background:#142633de}.actions #message{position:absolute;right:0;bottom:100%;max-width:min(400px,95%);margin-bottom:7px;background:#102332df;border-radius:12px;padding:6px 10px;font-size:13px}.actions #matchActions:not([hidden]){margin:0;gap:4px}.actions #progress{width:min(280px,80vw)}body.frozen .actions>.fine{display:none}#settings{position:fixed;top:max(10px,env(safe-area-inset-top));right:12px;z-index:3}#sheet{position:fixed;z-index:4;top:max(9px,env(safe-area-inset-top));right:8px;width:min(390px,95vw);max-height:85dvh;overflow:auto;background:#152936f5;border-radius:16px;padding:9px;box-shadow:0 5px 24px #0008}#dismiss{display:block;margin-left:auto}.hud[open]{bottom:64px}body.frozen .hud{display:none}.actions [hidden],#sheet[hidden]{display:none}
 #editSurface{touch-action:none;pointer-events:auto;z-index:1}#editBar:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}#editBar button{padding:7px 11px}#editBar [aria-pressed=true]{background:#ffd27a;color:#15212a}body:has(#editSurface:not([hidden])) #message{pointer-events:none}body:has(#editSurface:not([hidden])) .wrap>header{display:none}
-</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v3.5</div></div><div class="tag">観測地点</div></header>
+body.frozen .view{inset:0;margin:auto;width:min(100vw,calc(100dvh * var(--shot-ratio)));height:min(100dvh,calc(100vw / var(--shot-ratio)))}
+</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v3.6</div></div><div class="tag">観測地点</div></header>
 <div class="view" id="view"><div class="scene" id="scene"><video id="camera" autoplay playsinline muted></video><canvas hidden id="still"></canvas><canvas id="overlay"></canvas></div><div class="cross"></div><canvas id="editSurface" hidden aria-label="写真上で稜線を編集"></canvas>
 <details class="hud"><summary>方位・センサー</summary><b id="siteName">地点未取得</b><br><span id="sensorStatus">センサー未開始</span><br>方位 <b class="metric" id="headingText">—</b>　仰角 <b class="metric" id="pitchText">—</b><br>傾き <b class="metric" id="rollText">—</b>　画角 <b class="metric" id="fovText">65°</b>　DEM <b class="metric" id="demText">未取得</b></details></div>
 <section class="panel actions"><div class="viewAction">
@@ -12,7 +13,7 @@ body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100
 <button class="primary" id="capture" hidden>フリーズ</button>
 </div><div class="fine" style="margin-top:10px"><span>ズーム</span><button id="zoomOut" aria-label="ズームアウト" disabled>−</button><output id="zoomValue" class="metric">1.0倍</output><input hidden type="range" id="zoom" min="1" max="4" step="0.1" value="1"><button id="zoomIn" aria-label="ズームイン">＋</button></div>
 
-<div id="matchActions" hidden><button id="editTrace">稜線を編集</button><button class="primary" id="autoAlign">自動照合</button><button id="applyMatch">補正して再開</button><button id="cancelMatch">取消</button></div>
+<div id="matchActions" hidden><button class="primary" id="manualAlign" aria-pressed="true">手動調整</button><button id="editTrace">稜線抽出</button><button hidden id="autoAlign">自動照合</button><button id="applyMatch">補正して再開</button><button id="cancelMatch">取消</button></div>
 <div id="editBar" hidden><button data-edit="range">範囲</button><button data-edit="bridge">つなぎ直す</button><button data-edit="add">手描き</button><button data-edit="erase">消去</button><button id="undoStroke">元に戻す</button><button id="finishEdit">完了</button></div><div id="progress" hidden><div id="bar"></div></div>
 <p id="message" role="status">「ARを開始」を押すと、現在地を取得し、周囲の稜線を読み込みます。</p>
 </section>
@@ -735,7 +736,7 @@ function beginPair() {
   gesture={pair,rect,scale:Number($('ridgeScale').value),roll:rollCorrection,shift:{...shift}};
 }
 scene.addEventListener('pointerdown',e=>{
-  if(!shot)return;
+  if(!shot?.manual)return;
   scene.setPointerCapture(e.pointerId);
   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});beginPair();
 });
@@ -761,26 +762,68 @@ for(const type of ['pointerup','pointercancel','lostpointercapture'])scene.addEv
 const editor=$('editSurface');
 let tool='range', stroke=null;
 const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+// Convert between the frozen screen and a level image whose columns follow gravity.
+function levelFrame(w,h,roll){
+  const c=Math.cos(roll*RAD),s=Math.sin(roll*RAD);
+  const width=Math.ceil(Math.abs(w*c)+Math.abs(h*s)-1e-8),height=Math.ceil(Math.abs(h*c)+Math.abs(w*s)-1e-8);
+  function toLevel(x,y){
+    const dx=x-w/2,dy=y-h/2;
+    return {x:(dx*c+dy*s)/width+.5,y:(-dx*s+dy*c)/height+.5};
+  }
+  function toScreen(x,y){
+    const dx=(x-.5)*width,dy=(y-.5)*height;
+    return {x:w/2+c*dx-s*dy,y:h/2+s*dx+c*dy};
+  }
+  return {w,h,c,s,width,height,toLevel,toScreen};
+}
+function prepareLevelPhoto(){
+  if(shot.frame)return;
+  const source=shot.analysis,frame=levelFrame(source.width,source.height,shot.roll);
+  const canvas=document.createElement('canvas');canvas.width=frame.width;canvas.height=frame.height;
+  const ctx=canvas.getContext('2d'),target=ctx.createImageData(canvas.width,canvas.height);
+  const pixels=source.getContext('2d').getImageData(0,0,source.width,source.height).data;
+  // Extend edge pixels so the rotated image corners do not introduce black contours.
+  for(let y=0;y<canvas.height;y++)for(let x=0;x<canvas.width;x++){
+    const p=frame.toScreen((x+.5)/canvas.width,(y+.5)/canvas.height);
+    const i=4*(clamp(Math.floor(p.y),0,frame.h-1)*frame.w+clamp(Math.floor(p.x),0,frame.w-1));
+    const j=4*(y*canvas.width+x);target.data[j]=pixels[i];target.data[j+1]=pixels[i+1];target.data[j+2]=pixels[i+2];target.data[j+3]=255;
+  }
+  ctx.putImageData(target,0,0);shot.frame=frame;shot.analysis=canvas;
+}
+function manualMode(){
+  if(!shot)return;
+  shot.manual=true;closeEditor();$('manualAlign').setAttribute('aria-pressed','true');
+  $('autoAlign').hidden=true;$('manualAlign').classList.add('primary');
+  say('2本指で稜線を移動・拡大縮小・回転し、「補正して再開」で確定します。');draw();
+}
+
 function extractPhotoTrace(){
+  prepareLevelPhoto();
   const e=shot.edit;
   const raw=$('extractor').contentWindow.extractFrame(shot.analysis,e.top,e.bottom);
   if(!raw.length)throw Error('稜線を抽出できません');
-  shot.trace=raw.map((p,i)=>({...p,...e.overrides.get(i)}));
+  shot.trace=raw.map((p,i)=>{
+    const q={...p,...e.overrides.get(i)},f=shot.frame,v=f.toScreen(q.x,q.y);
+    q.visible=q.visible && v.x>=0 && v.x<=f.w && v.y>=0 && v.y<=f.h;return q;
+  });
 }
 function paintEditor(){
   if(editor.hidden || !shot)return;
   const rect=editor.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);
-  const w=rect.width,h=rect.height;
-  editor.width=Math.max(1,Math.round(w*dpr));editor.height=Math.max(1,Math.round(h*dpr));
-  const c=editor.getContext('2d');c.scale(dpr,dpr);
+  const f=shot.frame,w=f.width,h=f.height;
+  editor.width=Math.max(1,Math.round(rect.width*dpr));editor.height=Math.max(1,Math.round(rect.height*dpr));
+  const c=editor.getContext('2d');c.scale(editor.width/f.w,editor.height/f.h);c.translate(f.w/2,f.h/2);c.rotate(shot.roll*RAD);c.translate(-w/2,-h/2);
   if(tool==='range'){
     c.fillStyle='#03132173';c.fillRect(0,0,w,h*shot.edit.top/100);
     c.fillRect(0,h*shot.edit.bottom/100,w,h*(1-shot.edit.bottom/100));
     for(const [key,label] of [['top','探索開始'],['bottom','探索終了']]){
       const y=h*shot.edit[key]/100;
       c.fillStyle='#ffce6b';c.fillRect(0,y-1,w,2);
-      c.fillRect(8,clamp(y-12,0,h-24),88,24);c.fillStyle='#15212a';c.font='bold 14px sans-serif';
-      c.fillText(label+' ↕',16,clamp(y-12,0,h-24)+17);
+      const corners=[[0,0],[f.w,0],[f.w,f.h],[0,f.h]].map(([x,y])=>f.toLevel(x,y)),xs=[];
+      corners.forEach((a,i)=>{const b=corners[(i+1)%4],t=(y/h-a.y)/(b.y-a.y);if(t>=0 && t<=1)xs.push(w*(a.x+t*(b.x-a.x)));});
+      const labelX=xs.length?Math.min(...xs)+8:8;
+      c.fillRect(labelX,clamp(y-12,0,h-24),88,24);c.fillStyle='#15212a';c.font='bold 14px sans-serif';
+      c.fillText(label+' ↕',labelX+8,clamp(y-12,0,h-24)+17);
     }
   }
   c.beginPath();let connected=false;
@@ -806,6 +849,7 @@ $('editTrace').onclick=()=>{
   if(!shot)return;
   try {
     if(!shot.trace)extractPhotoTrace();
+    shot.manual=false;$('manualAlign').setAttribute('aria-pressed','false');$('manualAlign').classList.remove('primary');$('autoAlign').hidden=false;
     editor.hidden=false;$('editBar').hidden=false;$('matchActions').hidden=true;
     $('undoStroke').disabled=!shot.edit.history.length;draw();setEditTool('range');
     say('金色の線を上下に動かし、空と山の境界を挟んでください。');
@@ -824,7 +868,7 @@ $('undoStroke').onclick=()=>{
 };
 function position(ev){
   const r=editor.getBoundingClientRect();
-  return {x:clamp((ev.clientX-r.left)/r.width,0,1),y:clamp((ev.clientY-r.top)/r.height,0,1)};
+  const f=shot.frame;return f.toLevel(clamp((ev.clientX-r.left)/r.width,0,1)*f.w,clamp((ev.clientY-r.top)/r.height,0,1)*f.h);
 }
 let pins=[];
 function guidedSegment(image,a,b){
@@ -880,7 +924,8 @@ function pinBoundary(p){
 }
 
 function markStroke(a,b){
-  const trace=shot.trace,n=trace.length,r=editor.getBoundingClientRect();
+  const trace=shot.trace,n=trace.length;let r=editor.getBoundingClientRect();
+  const factor=r.width/shot.frame.w;r={width:shot.frame.width*factor,height:shot.frame.height*factor};
   const radius=14, dx=(b.x-a.x)*r.width,dy=(b.y-a.y)*r.height;
   const pad=tool==='erase'?radius/r.width:0;
   const lo=clamp(Math.round((Math.min(a.x,b.x)-pad)*(n-1)),0,n-1);
@@ -904,7 +949,7 @@ editor.onpointerdown=ev=>{
   const p=position(ev),e=shot.edit;
   if(tool==='bridge'){if(ev.isPrimary!==false)pinBoundary(p);return;}
   const key=Math.abs(p.y*100-e.top)<Math.abs(p.y*100-e.bottom)?'top':'bottom';
-  if(tool==='range' && Math.abs(p.y-e[key]/100)*editor.clientHeight>32)return;
+  if(tool==='range' && Math.abs(p.y-e[key]/100)*shot.frame.height*editor.clientWidth/shot.frame.w>32)return;
   editor.setPointerCapture(ev.pointerId);checkpoint();stroke={id:ev.pointerId,p,key};
   if(tool!=='range')markStroke(p,p);paintEditor();
 };
@@ -943,13 +988,12 @@ function captureStill() {
   analysis.getContext('2d').drawImage(still,(w-w/z)/2,(h-h/z)/2,w/z,h/z,0,0,analysis.width,analysis.height);
   shot={edit:{top:25,bottom:85,overrides:new Map(),history:[]},heading,pitch,roll,z,analysis,sourceWidth:video.videoWidth,sourceHeight:video.videoHeight,
     initial:Object.fromEntries(matchKeys.map(k=>[k,Number($(k).value)])),initialShift:{...shift},initialRoll:rollCorrection};
-  view.style.aspectRatio=w+' / '+h;
-  $('sensorStatus').textContent='静止画で位置合わせ';$('autoAlign').classList.add('primary');$('applyMatch').classList.remove('primary');
-  document.body.classList.add('frozen');still.hidden=false;
+  view.style.setProperty('--shot-ratio',w/h);
+  $('sensorStatus').textContent='静止画で位置合わせ';$('autoAlign').classList.remove('primary');$('applyMatch').classList.remove('primary');
+  document.body.classList.add('frozen');still.hidden=false;manualMode();
   $('matchActions').hidden=false;
   $('capture').hidden=true;
   for(const id of ['siteMode','gpscheck','start','lens','load','fov','zoomOut','zoomIn','freeze','reset','toggle']) $(id).disabled=true;
-  say('2本指で稜線を移動・拡大縮小・回転できます。「補正して再開」で確定します。');
   draw();
 }
 function liveAgain(apply) {
@@ -968,9 +1012,9 @@ function liveAgain(apply) {
 }
 function autoAlign(){
   if(!shot)return;
-  const {analysis,z,sourceWidth,sourceHeight}=shot;
-  const w=analysis.width,h=analysis.height;
+  const {z,sourceWidth,sourceHeight}=shot;
   if(!shot.trace)extractPhotoTrace();
+  const w=shot.frame.w,h=shot.frame.h;
   const trace=shot.trace;
   const visible=trace.filter(p=>p.visible);
   if(visible.length<trace.length*0.25 || visible.length<25){say('空と山の境界を十分に抽出できません。手動で調整するか「取消」で別の景色を試してください。');return;}
@@ -986,9 +1030,10 @@ function autoAlign(){
       const idx=norm(az)*2,j=Math.floor(idx),t=idx-j;
       const point=project(az,dem.outline[j]*(1-t)+dem.outline[(j+1)%720]*t);
       if(!point)continue;
-      const x=Math.round(point[0]/w*(trace.length-1)), q=trace[x];
+      if(point[0]<0||point[0]>w)continue;
+      const uv=shot.frame.toLevel(...point),x=Math.round(uv.x*(trace.length-1)),q=trace[x];
       if(!q?.visible || point[1]<0 || point[1]>h)continue;
-      const error=(point[1]/h-q.y)*h;
+      const error=(uv.y-q.y)*shot.frame.height;
       total+=1/(1+(error/5)**2);count++;
     }
     return count<12?-Infinity:total/count;
@@ -1030,6 +1075,7 @@ function scoreCandidates(grad,w,h,base){
   draw();
   $('autoAlign').classList.remove('primary');$('applyMatch').classList.add('primary');say('水色が写真の稜線、緑が予測線です。峰と鞍部が重なったら「補正して再開」を押してください。');
 }
+$('manualAlign').onclick=manualMode;
 $('capture').onclick=captureStill;
 $('autoAlign').onclick=()=>{try{autoAlign();}catch(e){say('静止画の解析に失敗しました：'+e.message);}};
 $('applyMatch').onclick=()=>liveAgain(true);
@@ -1077,8 +1123,9 @@ for (let bearing = current - 180; bearing <= current + 180; bearing += step) {
 }
 c.save();c.strokeStyle='#063e39';c.lineWidth=5*dpr;c.lineJoin='round';c.beginPath();samples.forEach((point,i)=>{if(point){if(samples[i-1])c.lineTo(...point);else c.moveTo(...point)}});c.stroke();c.strokeStyle='#52f5cc';c.lineWidth=2.3*dpr;c.stroke();c.restore();
 if($('peakNames').checked && editor.hidden)drawPeakNames(c,project,w,h,dpr);
-if(shot?.trace && editor.hidden){c.beginPath();let connected=false;for(const p of shot.trace){if(!p.visible){connected=false;continue;}
- const x=w*(0.5+(p.x-0.5)/shot.z),y=h*(0.5+(p.y-0.5)/shot.z);
+if(shot?.trace && !shot.manual && editor.hidden){c.beginPath();let connected=false;for(const p of shot.trace){if(!p.visible){connected=false;continue;}
+ const f=shot.frame,v=f.toScreen(p.x,p.y);
+ const x=w*(0.5+(v.x/f.w-0.5)/shot.z),y=h*(0.5+(v.y/f.h-0.5)/shot.z);
  if(connected)c.lineTo(x,y);else c.moveTo(x,y);connected=true;}
  c.strokeStyle='#65cfff';c.lineWidth=1.4*dpr/shot.z;c.stroke();}}
 // One centered transform keeps the live image and the rotated ridge registered.
