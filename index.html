@@ -1,10 +1,10 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v3.6</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v3.7</title><style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0d1c29;color:#eef6fa;font:15px system-ui,-apple-system,sans-serif}header{padding:12px 15px;background:#18344a;display:flex;justify-content:space-between;align-items:center;gap:10px}header b{font-size:18px}.tag{font-size:11px;color:#b5d8e8}.wrap{max-width:850px;margin:auto}.view{position:relative;background:#060e16;aspect-ratio:4/3;overflow:hidden}video,canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene{position:absolute;inset:0;transform-origin:center}canvas{pointer-events:none}.hud{position:absolute;top:9px;left:9px;background:#0a2232c9;padding:7px 9px;border-radius:8px;font-size:12px;line-height:1.6}.cross{position:absolute;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);pointer-events:none}.cross:before,.cross:after{content:"";position:absolute;background:#ffffffa8}.cross:before{width:18px;height:1px;top:9px}.cross:after{height:18px;width:1px;left:9px}.panel{padding:12px 14px;border-bottom:1px solid #2b4d63}h3{margin:0 0 10px;font-size:15px}button{border:0;border-radius:10px;background:#54b3d0;color:#082435;padding:11px 13px;font-weight:700;font-size:14px;cursor:pointer}button.primary{background:#64d8b5}button.warn{background:#f0c56a}button:disabled{opacity:.45}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons>*{flex:1 1 135px}label{display:block;margin:9px 0 5px}input[type=range]{width:100%;accent-color:#56c9e2}small,.hint{color:#b9cedb;font-size:12px;line-height:1.55}.metric{font-variant-numeric:tabular-nums;color:#8be6d5}#message{background:#213b4c;border-radius:8px;padding:10px;min-height:43px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.map{height:185px;position:relative;overflow:hidden;border-radius:9px;background:#243e4e}.map img{width:100%;height:100%;object-fit:cover}.map span{position:absolute;bottom:6px;left:7px;background:#102634d9;font-size:11px;padding:4px;border-radius:4px}details summary{cursor:pointer;font-weight:700}footer{padding:12px 14px;color:#a6becd;font-size:11px;line-height:1.5}.fine{display:flex;align-items:center;gap:7px}.fine button{padding:8px 12px;min-width:42px}.fine input{flex:1;min-width:20px}#progress{height:5px;background:#274658;border-radius:4px;overflow:hidden;margin-top:8px}#bar{height:100%;background:#66d4b4;width:0%}@media(max-width:440px){.view{aspect-ratio:3/4}button{font-size:13px;padding:10px 8px}.grid{grid-template-columns:1fr 1fr}}
 .viewAction{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:95%}.viewAction button{box-shadow:0 2px 10px #0008;padding-inline:22px}button,.fine button,select{min-height:44px}button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid white;outline-offset:2px}.view{max-height:62svh}.hud summary{padding:4px;cursor:pointer}.actions #message{margin:0;padding:3px 0;min-height:0;background:none}.actions #progress{margin:0 0 8px}.actions #matchActions:not([hidden]){display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}.actions #matchActions button{flex:1 1 auto}.actions #cancelMatch{background:transparent;color:white;border:1px solid #7794a6}.fine input[type=range]{min-height:36px}details>summary{min-height:36px;align-content:center}
 body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;background:#101920}.scene{touch-action:none}.cross{pointer-events:none}.wrap>header{position:fixed;z-index:2;top:max(10px,env(safe-area-inset-top));left:12px;background:#091621b8;border-radius:13px;padding:7px 10px;pointer-events:none}.wrap>header .tag:last-child{display:none}.wrap>header>div:first-child{display:flex;align-items:center;gap:8px}.wrap>header>div:first-child .tag{display:block}.wrap>header b{font-size:14px}.hud{top:auto;bottom:max(12px,env(safe-area-inset-bottom));left:10px;z-index:1}.hud summary{min-height:32px}.actions{position:fixed;z-index:2;bottom:max(9px,env(safe-area-inset-bottom));right:10px;left:10px;border:0;background:none;padding:0;display:flex;align-items:flex-end;flex-direction:column;gap:6px;pointer-events:none}.actions button,.actions output{pointer-events:auto}.actions button,#settings{background:#142633de;color:white;border:1px solid #ffffff65;border-radius:24px;padding:8px 14px;box-shadow:0 1px 5px #0006}.actions button.primary{background:#b4f3dc;color:#092b20}.viewAction{position:static;transform:none;max-width:none;width:auto}.actions>.fine{margin:0!important;gap:0}.actions>.fine span{display:none}.actions output{padding:7px;color:white;background:#142633de}.actions #message{position:absolute;right:0;bottom:100%;max-width:min(400px,95%);margin-bottom:7px;background:#102332df;border-radius:12px;padding:6px 10px;font-size:13px}.actions #matchActions:not([hidden]){margin:0;gap:4px}.actions #progress{width:min(280px,80vw)}body.frozen .actions>.fine{display:none}#settings{position:fixed;top:max(10px,env(safe-area-inset-top));right:12px;z-index:3}#sheet{position:fixed;z-index:4;top:max(9px,env(safe-area-inset-top));right:8px;width:min(390px,95vw);max-height:85dvh;overflow:auto;background:#152936f5;border-radius:16px;padding:9px;box-shadow:0 5px 24px #0008}#dismiss{display:block;margin-left:auto}.hud[open]{bottom:64px}body.frozen .hud{display:none}.actions [hidden],#sheet[hidden]{display:none}
 #editSurface{touch-action:none;pointer-events:auto;z-index:1}#editBar:not([hidden]){display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}#editBar button{padding:7px 11px}#editBar [aria-pressed=true]{background:#ffd27a;color:#15212a}body:has(#editSurface:not([hidden])) #message{pointer-events:none}body:has(#editSurface:not([hidden])) .wrap>header{display:none}
 body.frozen .view{inset:0;margin:auto;width:min(100vw,calc(100dvh * var(--shot-ratio)));height:min(100dvh,calc(100vw / var(--shot-ratio)))}
-</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v3.6</div></div><div class="tag">観測地点</div></header>
+</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v3.7</div></div><div class="tag">観測地点</div></header>
 <div class="view" id="view"><div class="scene" id="scene"><video id="camera" autoplay playsinline muted></video><canvas hidden id="still"></canvas><canvas id="overlay"></canvas></div><div class="cross"></div><canvas id="editSurface" hidden aria-label="写真上で稜線を編集"></canvas>
 <details class="hud"><summary>方位・センサー</summary><b id="siteName">地点未取得</b><br><span id="sensorStatus">センサー未開始</span><br>方位 <b class="metric" id="headingText">—</b>　仰角 <b class="metric" id="pitchText">—</b><br>傾き <b class="metric" id="rollText">—</b>　画角 <b class="metric" id="fovText">65°</b>　DEM <b class="metric" id="demText">未取得</b></details></div>
 <section class="panel actions"><div class="viewAction">
@@ -557,7 +557,7 @@ $('mapsave').onclick=()=>{
   $('siteMap').toBlob(blob=>{if(!blob)return;const a=document.createElement('a'),url=URL.createObjectURL(blob);a.href=url;a.download='AR山ナビ_観測地点.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),30000);},'image/png');
 };
 
-async function loadDEM(site,job){const btn=$('load');btn.hidden=false;btn.disabled=true;btn.textContent='稜線を読込中…';$('progress').hidden=false;$('bar').style.width='0%';try{say(site.name+'周囲のDEMを読み込み中… 通信環境によっては時間がかかります。');const rays=720;const radii=Array.from({length:150},(_,i)=>.08*Math.pow(100/.08,i/149));const pts=[];for(let j=0;j<rays;j++){const b=j*0.5;for(const [ri,r] of radii.entries()){const [lat,lon]=forward(site.lat,site.lon,b,r);pts.push({j,ri,r,lat,lon})}}const rings=radii.map(r=>({r,alt:new Float32Array(rays)}));const data=new Float32Array(rays);data.fill(-90);const batchSize=240;for(let i=0;i<pts.length;i+=batchSize){if(job!==terrainJob)return;const batch=pts.slice(i,i+batchSize);const vals=await Promise.all(batch.map(p=>elevation(p.lat,p.lon)));if(job!==terrainJob)return;for(let k=0;k<batch.length;k++){const p=batch[k],h=vals[k],curv=(p.r*1000)**2/(2*6371000),ang=Math.atan2(h-site.h-1.6-curv,p.r*1000)/RAD;rings[p.ri].alt[p.j]=ang;data[p.j]=Math.max(data[p.j],ang)}$('bar').style.width=Math.round(100*Math.min(1,(i+batch.length)/pts.length))+'%';await new Promise(r=>setTimeout(r,0))}if(job!==terrainJob)return;dem={peaks:visiblePeaks(site,rings),outline:data,lines:terrainEdges({rings,step:0.5})};$('demText').textContent='取得済';say('緑は空との境界、黄・橙は手前の尾根です。山並みに向けてフリーズすると位置を合わせられます。');draw()}catch(e){if(job!==terrainJob)return;say('DEM取得エラー: '+e.message+'。インターネット接続とブラウザの制限を確認してください。')}finally{if(job===terrainJob){btn.disabled=false;btn.textContent='稜線を再取得';btn.hidden=!!dem;$('capture').hidden=!dem||!cameraStream;$('progress').hidden=true;}}}
+async function loadDEM(site,job){const btn=$('load');btn.hidden=false;btn.disabled=true;btn.textContent='稜線を読込中…';$('progress').hidden=false;$('bar').style.width='0%';try{say(site.name+'周囲のDEMを読み込み中… 通信環境によっては時間がかかります。');const rays=720;const radii=Array.from({length:150},(_,i)=>.08*Math.pow(100/.08,i/149));const pts=[];for(let j=0;j<rays;j++){const b=j*0.5;for(const [ri,r] of radii.entries()){const [lat,lon]=forward(site.lat,site.lon,b,r);pts.push({j,ri,r,lat,lon})}}const rings=radii.map(r=>({r,alt:new Float32Array(rays)}));const data=new Float32Array(rays);data.fill(-90);const batchSize=240;for(let i=0;i<pts.length;i+=batchSize){if(job!==terrainJob)return;const batch=pts.slice(i,i+batchSize);const vals=await Promise.all(batch.map(p=>elevation(p.lat,p.lon)));if(job!==terrainJob)return;for(let k=0;k<batch.length;k++){const p=batch[k],h=vals[k],curv=(p.r*1000)**2/(2*6371000),ang=Math.atan2(h-site.h-1.6-curv,p.r*1000)/RAD;rings[p.ri].alt[p.j]=ang;data[p.j]=Math.max(data[p.j],ang)}$('bar').style.width=Math.round(100*Math.min(1,(i+batch.length)/pts.length))+'%';await new Promise(r=>setTimeout(r,0))}if(job!==terrainJob)return;dem={peaks:visiblePeaks(site,rings),outline:data,lines:terrainEdges({rings,step:0.5})};$('demText').textContent='取得済';say('緑は空との境界、黄・橙は手前の尾根です。ライブのまま1本指で移動、2本指で拡大縮小・回転できます。');draw()}catch(e){if(job!==terrainJob)return;say('DEM取得エラー: '+e.message+'。インターネット接続とブラウザの制限を確認してください。')}finally{if(job===terrainJob){btn.disabled=false;btn.textContent='稜線を再取得';btn.hidden=!!dem;$('capture').hidden=!dem||!cameraStream;$('progress').hidden=true;}}}
 function cameraPose(beta, gamma, angle) {
   const b = beta * RAD, g = gamma * RAD, a = angle * RAD;
   // Vertical components of the device's right, top and rear-camera axes.
@@ -688,7 +688,7 @@ async function start(event) {
       window.addEventListener('deviceorientationabsolute',orientation,true);window.addEventListener('deviceorientation',orientation,true);
       $('start').hidden=true;
       if(!dem && !terrainBusy) await changeSite();
-      else if(dem){$('capture').hidden=false;say('山並みに向けてフリーズすると、静止画で位置合わせできます。');}
+      else if(dem){$('capture').hidden=false;say('1本指で稜線を移動、2本指で拡大縮小・回転できます。');}
     } else say('カメラ起動。センサーを使うには姿勢情報へのアクセスを許可してください。');
   } catch (e) {
     let restored = false;
@@ -730,21 +730,32 @@ function pairPose() {
 }
 function beginPair() {
   gesture=null;
-  if(touches.size!==2 || !shot)return;
+  if(touches.size!==2)return;
   const pair=pairPose(),rect=$('view').getBoundingClientRect();
   if(pair.d<6)return;
   gesture={pair,rect,scale:Number($('ridgeScale').value),roll:rollCorrection,shift:{...shift}};
 }
+function canAdjustRidge(){
+  return shot ? shot.manual && editor.hidden : Boolean(cameraStream && dem && showLine);
+}
 scene.addEventListener('pointerdown',e=>{
-  if(!shot?.manual)return;
+  if(!canAdjustRidge() || e.button!==0 || touches.size>=2)return;
   scene.setPointerCapture(e.pointerId);
   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});beginPair();
 });
 scene.addEventListener('pointermove',e=>{
-  if(!shot || !touches.has(e.pointerId))return;
+  const previous=touches.get(e.pointerId);
+  if(!previous || !canAdjustRidge())return;
+  const z=shot?.z ?? Number($('zoom').value);
   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(touches.size===1){
+    const rect=$('view').getBoundingClientRect();
+    shift.x+=(e.clientX-previous.x)/(rect.width*z);
+    shift.y+=(e.clientY-previous.y)/(rect.height*z);
+    draw();return;
+  }
   if(!gesture){beginPair();return;}
-  const now=pairPose(),g=gesture,rect=g.rect,z=shot.z;
+  const now=pairPose(),g=gesture,rect=g.rect;
   const scale=$('ridgeScale');
   scale.value=Math.max(+scale.min,Math.min(+scale.max,g.scale*now.d/g.pair.d));
   const ratio=Number(scale.value)/g.scale, angle=now.a-g.pair.a;
@@ -756,7 +767,9 @@ scene.addEventListener('pointermove',e=>{
   updateRidgeScale();
 });
 for(const type of ['pointerup','pointercancel','lostpointercapture'])scene.addEventListener(type,e=>{
-  if(touches.delete(e.pointerId))beginPair();
+  if(!touches.delete(e.pointerId))return;
+  if(gesture && !shot)$('ridgeScale').onchange();
+  beginPair();
 });
 
 const editor=$('editSurface');
@@ -794,7 +807,7 @@ function manualMode(){
   if(!shot)return;
   shot.manual=true;closeEditor();$('manualAlign').setAttribute('aria-pressed','true');
   $('autoAlign').hidden=true;$('manualAlign').classList.add('primary');
-  say('2本指で稜線を移動・拡大縮小・回転し、「補正して再開」で確定します。');draw();
+  say('1本指で稜線を移動、2本指で拡大縮小・回転し、「補正して再開」で確定します。');draw();
 }
 
 function extractPhotoTrace(){
@@ -986,6 +999,7 @@ function captureStill() {
   const analysis=document.createElement('canvas');
   analysis.width=Math.round(680*Math.min(1,w/h));analysis.height=Math.round(analysis.width*h/w);
   analysis.getContext('2d').drawImage(still,(w-w/z)/2,(h-h/z)/2,w/z,h/z,0,0,analysis.width,analysis.height);
+  touches.clear();gesture=null;
   shot={edit:{top:25,bottom:85,overrides:new Map(),history:[]},heading,pitch,roll,z,analysis,sourceWidth:video.videoWidth,sourceHeight:video.videoHeight,
     initial:Object.fromEntries(matchKeys.map(k=>[k,Number($(k).value)])),initialShift:{...shift},initialRoll:rollCorrection};
   view.style.setProperty('--shot-ratio',w/h);
