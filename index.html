@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v4.2</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v4.3</title><style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0d1c29;color:#eef6fa;font:15px system-ui,-apple-system,sans-serif}header{padding:12px 15px;background:#18344a;display:flex;justify-content:space-between;align-items:center;gap:10px}header b{font-size:18px}.tag{font-size:11px;color:#b5d8e8}.wrap{max-width:850px;margin:auto}.view{position:relative;background:#060e16;aspect-ratio:4/3;overflow:hidden}video,canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene{position:absolute;inset:0;transform-origin:center}canvas{pointer-events:none}.hud{position:absolute;top:9px;left:9px;background:#0a2232c9;padding:7px 9px;border-radius:8px;font-size:12px;line-height:1.6}.cross{position:absolute;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);pointer-events:none}.cross:before,.cross:after{content:"";position:absolute;background:#ffffffa8}.cross:before{width:18px;height:1px;top:9px}.cross:after{height:18px;width:1px;left:9px}.panel{padding:12px 14px;border-bottom:1px solid #2b4d63}h3{margin:0 0 10px;font-size:15px}button{border:0;border-radius:10px;background:#54b3d0;color:#082435;padding:11px 13px;font-weight:700;font-size:14px;cursor:pointer}button.primary{background:#64d8b5}button.warn{background:#f0c56a}button:disabled{opacity:.45}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons>*{flex:1 1 135px}label{display:block;margin:9px 0 5px}input[type=range]{width:100%;accent-color:#56c9e2}small,.hint{color:#b9cedb;font-size:12px;line-height:1.55}.metric{font-variant-numeric:tabular-nums;color:#8be6d5}#message{background:#213b4c;border-radius:8px;padding:10px;min-height:43px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.map{height:185px;position:relative;overflow:hidden;border-radius:9px;background:#243e4e}.map img{width:100%;height:100%;object-fit:cover}.map span{position:absolute;bottom:6px;left:7px;background:#102634d9;font-size:11px;padding:4px;border-radius:4px}details summary{cursor:pointer;font-weight:700}footer{padding:12px 14px;color:#a6becd;font-size:11px;line-height:1.5}.fine{display:flex;align-items:center;gap:7px}.fine button{padding:8px 12px;min-width:42px}.fine input{flex:1;min-width:20px}#progress{height:5px;background:#274658;border-radius:4px;overflow:hidden;margin-top:8px}#bar{height:100%;background:#66d4b4;width:0%}@media(max-width:440px){.view{aspect-ratio:3/4}button{font-size:13px;padding:10px 8px}.grid{grid-template-columns:1fr 1fr}}
 .viewAction{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:95%}.viewAction button{box-shadow:0 2px 10px #0008;padding-inline:22px}button,.fine button,select{min-height:44px}button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid white;outline-offset:2px}.view{max-height:62svh}.hud summary{padding:4px;cursor:pointer}.actions #message{margin:0;padding:3px 0;min-height:0;background:none}.actions #progress{margin:0 0 8px}.actions #matchActions:not([hidden]){display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}.actions #matchActions button{flex:1 1 auto}.actions #cancelMatch{background:transparent;color:white;border:1px solid #7794a6}.fine input[type=range]{min-height:36px}details>summary{min-height:36px;align-content:center}
 body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;background:#101920}.scene{touch-action:none}.cross{pointer-events:none}.wrap>header{position:fixed;z-index:2;top:max(10px,env(safe-area-inset-top));left:12px;background:#091621b8;border-radius:13px;padding:7px 10px;pointer-events:none}.wrap>header .tag:last-child{display:none}.wrap>header>div:first-child{display:flex;align-items:center;gap:8px}.wrap>header>div:first-child .tag{display:block}.wrap>header b{font-size:14px}.hud{top:auto;bottom:max(12px,env(safe-area-inset-bottom));left:10px;z-index:1}.hud summary{min-height:32px}.actions{position:fixed;z-index:2;bottom:max(9px,env(safe-area-inset-bottom));right:10px;left:10px;border:0;background:none;padding:0;display:flex;align-items:flex-end;flex-direction:column;gap:6px;pointer-events:none}.actions button,.actions output{pointer-events:auto}.actions button,#settings{background:#142633de;color:white;border:1px solid #ffffff65;border-radius:24px;padding:8px 14px;box-shadow:0 1px 5px #0006}.actions button.primary{background:#b4f3dc;color:#092b20}.viewAction{position:static;transform:none;max-width:none;width:auto}.actions>.fine{margin:0!important;gap:0}.actions>.fine span{display:none}.actions output{padding:7px;color:white;background:#142633de}.actions #message{position:absolute;right:0;bottom:100%;max-width:min(400px,95%);margin-bottom:7px;background:#102332df;border-radius:12px;padding:6px 10px;font-size:13px}.actions #matchActions:not([hidden]){margin:0;gap:4px}.actions #progress{width:min(280px,80vw)}body.frozen .actions>.fine{display:none}#settings{position:fixed;top:max(10px,env(safe-area-inset-top));right:12px;z-index:3}#sheet{position:fixed;z-index:4;top:max(9px,env(safe-area-inset-top));right:8px;width:min(390px,95vw);max-height:85dvh;overflow:auto;background:#152936f5;border-radius:16px;padding:9px;box-shadow:0 5px 24px #0008}#dismiss{display:block;margin-left:auto}.hud[open]{bottom:64px}body.frozen .hud{display:none}.actions [hidden],#sheet[hidden]{display:none}
@@ -6,7 +6,7 @@ body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100
 body.frozen .view{inset:0;margin:auto;width:min(100vw,calc(100dvh * var(--shot-ratio)));height:min(100dvh,calc(100vw / var(--shot-ratio)))}
 #calDialog{background:#152936;color:white;border:1px solid #568293;border-radius:16px;width:min(85vw,360px);text-align:center}#calDialog::backdrop{background:#07131ac9}#calMark{font-size:68px;color:#94efd1}#calProgress{display:block;width:90%;margin:16px auto}#calGuide{min-height:4em}
 #focusRing{position:fixed;width:44px;height:44px;transform:translate(-50%,-50%);border:2px solid #ffdb73;border-radius:8px;box-shadow:0 0 3px #182327;pointer-events:none}
-</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v4.2</div></div><div class="tag">観測地点</div></header>
+#scaleDialog[open]{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:none;background:transparent;color:white;touch-action:manipulation}#scaleDialog::backdrop{background:transparent}#scaleBar{position:absolute;left:3%;right:3%;top:max(6px,env(safe-area-inset-top));padding:6px 10px;background:#102330ed;border-radius:10px}#scaleBar p{margin:2px 0 5px}</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v4.3</div></div><div class="tag">観測地点</div></header>
 <div class="view" id="view"><div class="scene" id="scene"><video id="camera" autoplay playsinline muted></video><canvas hidden id="still"></canvas><canvas id="overlay"></canvas></div><div class="cross"></div><div hidden id="focusRing" aria-hidden="true"></div><canvas id="editSurface" hidden aria-label="写真上で稜線を編集"></canvas>
 <details class="hud"><summary>方位・センサー</summary><b id="siteName">地点未取得</b><br><span id="sensorStatus">センサー未開始</span><br>方位 <b class="metric" id="headingText">—</b>　仰角 <b class="metric" id="pitchText">—</b><br>傾き <b class="metric" id="rollText">—</b>　画角 <b class="metric" id="fovText">65°</b>　DEM <b class="metric" id="demText">未取得</b></details></div>
 <section class="panel actions"><div class="viewAction">
@@ -32,10 +32,16 @@ body.frozen .view{inset:0;margin:auto;width:min(100vw,calc(100dvh * var(--shot-r
 <details><summary>周辺地図・保存</summary><canvas id="siteMap" hidden style="position:static;width:100%;height:auto" aria-label="観測地点の周辺地図"></canvas><p id="mapStatus" class="hint"></p><button id="mapload">地図を再取得</button> <button id="mapsave" disabled>地図をPNG保存</button><p class="hint">地図：<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院 標準地図</a>。標高：AWS Terrain Tiles。GPS現在地では地表標高＋1.6mから計算します。</p></details></div><div class="panel">
 <label for="ridgeScale"><strong>稜線だけの拡大・縮小</strong>　<output id="ridgeValue" class="metric" for="ridgeScale">1.00倍</output></label>
 <div class="fine"><span>縮小</span><input id="ridgeScale" type="range" min="0.25" max="3" step="0.01" value="1"><span>拡大</span></div>
+<button id="measureScale">上下の傾きで倍率を測る</button>
+<details><summary>回転中心の調整</summary><p class="hint">画面の自動回転をロックし、端末をまっすぐにして稜線を合わせます。同じ峰を見ながら左右に倒し、ずれが小さくなる位置を探してください。</p>
+<label>左右（＋は右） <output id="pivotXValue">0%</output><input id="pivotX" type="range" min="-25" max="25" step="0.5" value="0"></label>
+<label>上下（＋は下） <output id="pivotYValue">0%</output><input id="pivotY" type="range" min="-25" max="25" step="0.5" value="0"></label>
+<button id="resetPivot">回転中心を中央に戻す</button></details>
+
 
 </div><div class="panel"><details><summary>詳細設定・位置の微調整</summary><label for="lens">カメラ　<select id="lens" disabled><option value="">背面カメラ（自動）</option></select></label><label for="stability">稜線の手ぶれ補正　<select id="stability"><option value="light">弱（追従優先）</option><option value="standard" selected>標準</option><option value="strong">強（安定優先）</option></select></label><div class="grid"><div><label>方位補正 <b class="metric" id="azVal">0°</b></label><div class="fine"><button data-adj="az" data-step="-1">−</button><input id="az" type="range" min="-60" max="60" step="0.5" value="0"><button data-adj="az" data-step="1">＋</button></div></div><div><label>上下補正 <b class="metric" id="elVal">0°</b></label><div class="fine"><button data-adj="el" data-step="-1">−</button><input id="el" type="range" min="-25" max="25" step="0.5" value="0"><button data-adj="el" data-step="1">＋</button></div></div></div><label>映像の長辺画角（1倍・手動校正） <b class="metric" id="fovVal">65°</b></label><input id="fov" type="range" min="30" max="150" step="1" value="65"><p class="hint">中央の山頂を合わせ、左右の峰の間隔を確認します。緑線の峰が外側なら画角を大きく、内側なら小さくしてください。設定はカメラ別に記憶します。</p><div class="buttons"><button id="reset">補正をリセット</button><button id="freeze">センサー追従：ON</button><button id="toggle">稜線表示：ON</button></div></details></div>
 
-<footer>試作版です。稜線はDEMによる予測で、静止画で自動照合した後は重なりを目視で確認してください。スマートフォンの方位・姿勢情報は端末やブラウザにより精度・取得可否が異なります。カメラ・センサーはHTTPSまたはlocalhostで開いた場合に利用できることが多く、HTMLを直接開くと制限される場合があります。登山の安全判断には使用しないでください。</footer></aside></div><dialog id="calDialog" aria-labelledby="calTitle"><h2 id="calTitle"></h2><div id="calMark" aria-hidden="true"></div><p id="calGuide" role="status"></p><p id="calCompare" class="hint"></p><progress id="calProgress" max="100" aria-label="測定の進み具合"></progress><button id="calClose">中止</button></dialog>
+<footer>試作版です。稜線はDEMによる予測で、静止画で自動照合した後は重なりを目視で確認してください。スマートフォンの方位・姿勢情報は端末やブラウザにより精度・取得可否が異なります。カメラ・センサーはHTTPSまたはlocalhostで開いた場合に利用できることが多く、HTMLを直接開くと制限される場合があります。登山の安全判断には使用しないでください。</footer></aside></div><dialog id="scaleDialog" aria-label="稜線の倍率測定"><div id="scaleBar"><p id="scaleGuide" role="status"></p><button id="scaleRecord">中心を記録</button> <button id="scaleCancel">閉じる</button></div></dialog><dialog id="calDialog" aria-labelledby="calTitle"><h2 id="calTitle"></h2><div id="calMark" aria-hidden="true"></div><p id="calGuide" role="status"></p><p id="calCompare" class="hint"></p><progress id="calProgress" max="100" aria-label="測定の進み具合"></progress><button id="calClose">中止</button></dialog>
 <iframe hidden id="extractor" title="静止画稜線抽出" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;ja&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;写真稜線を抽出・修正&lt;/title&gt;&lt;style&gt;body{margin:0;background:#102536;color:#f0f7fb;font-family:system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:18px}h1{font-size:1.4rem}.panel{background:#244253;border-radius:14px;padding:16px;margin:12px 0}label{display:inline-block;margin:8px 12px 8px 0}button,input[type=file]{font:inherit}button{background:#7bdacb;color:#062b32;border:0;border-radius:9px;padding:10px 14px;margin:5px;cursor:pointer}canvas{width:100%;height:auto;display:block;border-radius:12px;background:#294153;touch-action:manipulation}input[type=range]{vertical-align:middle}small{color:#c2d7e0}.stats{line-height:1.8}a{color:#9de8e0}
 .ridge-layout{display:flex;align-items:stretch;gap:6px;width:100%}.ridge-photo{min-width:0;flex:1}.ridge-vcontrols{display:flex;gap:4px;flex:none;align-items:center}.vgroup{width:34px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;font-size:11px}.vgroup strong{white-space:nowrap}.vgroup span{font-size:11px}.vgroup input{writing-mode:vertical-lr;direction:rtl;appearance:slider-vertical;-webkit-appearance:slider-vertical;width:22px;height:115px;min-height:0;max-height:115px;margin:0;touch-action:none;accent-color:#7bdacb}.hint{font-size:12px;color:#d6e8ed;margin:5px 0 10px}@media(max-width:480px){main{padding:8px}.panel{padding:10px}.vgroup{width:30px}.ridge-vcontrols{gap:2px}}
 &lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main&gt;&lt;h1&gt;写真稜線を抽出・修正｜一点から新しい稜線を追跡&lt;/h1&gt;&lt;p&gt;画像の空と山の境界を推定します。遠景モードは左側の霞んだ山の弱い境界を広い範囲の色・明度差から補強します。写真を選ぶと自動抽出します。確信の低い区間は自動的に非表示にします（確信度は推定スコアで、正解確率ではありません）。全体が違う場合は「新しい稜線」モードで正しい稜線を一点タップ。以後は「部分修正」モードで必要な箇所をタップできます。&lt;/p&gt;&lt;div class=&quot;panel&quot;&gt;&lt;label&gt;写真を選択 &lt;input type=&quot;file&quot; id=&quot;file&quot; accept=&quot;image/*&quot;&gt;&lt;/label&gt;&lt;button id=&quot;run&quot;&gt;自動抽出し直す&lt;/button&gt;&lt;button id=&quot;newMode&quot;&gt;新しい稜線：一点タップ&lt;/button&gt;&lt;button id=&quot;fixMode&quot;&gt;部分修正&lt;/button&gt;&lt;button id=&quot;undo&quot;&gt;最後の点を戻す&lt;/button&gt;&lt;button id=&quot;clear&quot;&gt;修正点を全消去&lt;/button&gt;&lt;button id=&quot;save&quot;&gt;結果PNG保存&lt;/button&gt;&lt;button id=&quot;csv&quot;&gt;稜線CSV保存&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;panel&quot;&gt;&lt;label&gt;探索開始位置 &lt;input id=&quot;start&quot; type=&quot;range&quot; min=&quot;5&quot; max=&quot;85&quot; value=&quot;25&quot;&gt;&lt;span id=&quot;startV&quot;&gt;25%&lt;/span&gt;&lt;/label&gt;&lt;label&gt;探索終了位置 &lt;input id=&quot;end&quot; type=&quot;range&quot; min=&quot;15&quot; max=&quot;98&quot; value=&quot;85&quot;&gt;&lt;span id=&quot;endV&quot;&gt;85%&lt;/span&gt;&lt;/label&gt;&lt;label&gt;&lt;input id=&quot;distant&quot; type=&quot;checkbox&quot; checked&gt;遠景の弱い稜線を強調&lt;/label&gt;&lt;label&gt;遠景領域（写真左から） &lt;input id=&quot;farWidth&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;90&quot; value=&quot;55&quot;&gt;&lt;span id=&quot;farWidthV&quot;&gt;55%&lt;/span&gt;&lt;/label&gt;&lt;label&gt;遠景の強調度 &lt;input id=&quot;farBoost&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; value=&quot;6&quot;&gt;&lt;span id=&quot;farBoostV&quot;&gt;6&lt;/span&gt;&lt;/label&gt;&lt;label&gt;雲の除外強度 &lt;input id=&quot;cloud&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; value=&quot;6&quot;&gt;&lt;span id=&quot;cloudV&quot;&gt;6&lt;/span&gt;&lt;/label&gt;&lt;label&gt;滑らかさ &lt;input id=&quot;smooth&quot; type=&quot;range&quot; min=&quot;1&quot; max=&quot;12&quot; value=&quot;5&quot;&gt;&lt;span id=&quot;smoothV&quot;&gt;5&lt;/span&gt;&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;hideLow&quot; checked&gt;不明瞭な部分を自動で消す&lt;/label&gt;&lt;label&gt;判定の厳しさ &lt;input id=&quot;strict&quot; type=&quot;range&quot; min=&quot;1&quot; max=&quot;10&quot; value=&quot;5&quot;&gt;&lt;span id=&quot;strictV&quot;&gt;5&lt;/span&gt;&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;line&quot; checked&gt;推定稜線&lt;/label&gt;&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;photo&quot; checked&gt;写真を表示&lt;/label&gt;&lt;/div&gt;&lt;div class=&quot;panel&quot; style=&quot;border:1px solid #72dcca&quot;&gt;&lt;b&gt;稜線に沿った探索範囲（新機能）&lt;/b&gt;&lt;p style=&quot;font-size:.9em&quot;&gt;まず自動抽出し、正しい山の稜線を2〜4点タップしてください。「探索帯を再計算」で、点と稜線の形に沿って上下の探索範囲を変えます。&lt;/p&gt;&lt;label&gt;&lt;input id=&quot;adaptive&quot; type=&quot;checkbox&quot; checked&gt; 形状追従の探索帯を使用&lt;/label&gt;&lt;label&gt;探索帯の半幅 &lt;input id=&quot;bandWidth&quot; type=&quot;range&quot; min=&quot;10&quot; max=&quot;110&quot; value=&quot;38&quot;&gt;&lt;span id=&quot;bandWidthV&quot;&gt;38px&lt;/span&gt;&lt;/label&gt;&lt;label&gt;&lt;input id=&quot;bandPreview&quot; type=&quot;checkbox&quot; checked&gt; 探索帯の上下限を表示（黄色破線）&lt;/label&gt;&lt;button id=&quot;refineBand&quot; type=&quot;button&quot;&gt;探索帯を再計算&lt;/button&gt;&lt;button id=&quot;clearBand&quot; type=&quot;button&quot;&gt;探索帯を解除&lt;/button&gt;&lt;div id=&quot;bandMsg&quot; style=&quot;font-size:.9em;color:#c8e7e6&quot;&gt;黄色破線は探索範囲です。正解の稜線ではありません。&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;ridge-layout&quot;&gt;&lt;div class=&quot;ridge-photo&quot;&gt;&lt;canvas id=&quot;canvas&quot;&gt;&lt;/canvas&gt;&lt;/div&gt;&lt;div class=&quot;ridge-vcontrols&quot;&gt;&lt;div class=&quot;vgroup&quot;&gt;&lt;strong style=&quot;color:#ffcd56&quot;&gt;開始&lt;/strong&gt;&lt;input aria-label=&quot;探索開始位置&quot; id=&quot;vStart&quot; type=&quot;range&quot; min=&quot;5&quot; max=&quot;85&quot; value=&quot;25&quot; orient=&quot;vertical&quot;&gt;&lt;span id=&quot;vStartText&quot;&gt;25%&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;vgroup&quot;&gt;&lt;strong style=&quot;color:#ff6d8c&quot;&gt;終了&lt;/strong&gt;&lt;input aria-label=&quot;探索終了位置&quot; id=&quot;vEnd&quot; type=&quot;range&quot; min=&quot;15&quot; max=&quot;98&quot; value=&quot;85&quot; orient=&quot;vertical&quot;&gt;&lt;span id=&quot;vEndText&quot;&gt;85%&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;p class=&quot;hint&quot;&gt;写真上の黄色線＝探索開始位置、桃色線＝探索終了位置。右側の縦スライダーを上下して調整できます。&lt;/p&gt;&lt;div class=&quot;panel stats&quot; id=&quot;status&quot;&gt;写真を読み込むと自動解析します。全体が間違っていたら「新しい稜線：一点タップ」を選んで、正しい輪郭をタップしてください。&lt;/div&gt;&lt;p&gt;&lt;small&gt;注意：非表示判定はエッジ強度と他の候補との差に基づく暫定的な指標です。正しい稜線も消えたり、誤った線が残る場合があります。これは機械学習なしの試作版です。霞、雲、樹木、山の重なりがある写真では誤抽出する可能性があります。遠景強調は弱い色差・広いスケールの明度差を使いますが、雲も強調される場合があります。雲の除外は推定であり確実な識別ではありません。探索範囲を調整すると改善する場合があります。写真データは端末内で処理し、サーバーには送信しません。&lt;/small&gt;&lt;/p&gt;&lt;/main&gt;&lt;script&gt;
@@ -803,6 +809,7 @@ async function openCamera(deviceId) {
   const track = cameraStream.getVideoTracks()[0];
   const activeId = track.getSettings().deviceId || deviceId;
   lensKey = 'ar-long-fov:' + (activeId || track.label || 'default');
+  loadPivot();
   let calibration = 65;
   let ridgeScale = 1;
   try {
@@ -1248,7 +1255,8 @@ function autoAlign(){
   const base={b:shot.heading+Number($('az').value),p:shot.pitch+Number($('el').value),
     f:2*Math.atan(w/(2*focal*Number($('ridgeScale').value)))/RAD,r:shot.roll+rollCorrection};
   function matchScore(_grad,w,h,b,f,p,r){
-    const project=makeProject(w,h,b,p,r,w/(2*Math.tan(f*RAD/2)));
+    const pivot=pivotOffset(w,h,r,z);
+    const project=makeProject(w,h,b,p,r,w/(2*Math.tan(f*RAD/2)),...pivot);
     let total=0, count=0;
     // Score the projected DEM against the original extractor's confident pixels.
     for(let az=b-125;az<=b+125;az+=0.65){
@@ -1306,6 +1314,11 @@ $('autoAlign').onclick=()=>{try{autoAlign();}catch(e){say('静止画の解析に
 $('applyMatch').onclick=()=>liveAgain(true);
 $('cancelMatch').onclick=()=>liveAgain(false);
 
+function pivotOffset(w,h,bank,z=1){
+  const unit=Math.min(w,h)*z/100, x=Number($('pivotX').value)*unit, y=Number($('pivotY').value)*unit;
+  const c=Math.cos(bank*RAD), sn=Math.sin(bank*RAD);
+  return [x*(1-c)+y*sn,y*(1-c)-x*sn];
+}
 function makeProject(w,h,current,currentPitch,degrees,ridgeFocal,offsetX=0,offsetY=0){
 const tilt = currentPitch * RAD;
 const bank = degrees * RAD;
@@ -1325,7 +1338,8 @@ function draw(){const cv=$('overlay'),rect=$('view').getBoundingClientRect(),dpr
 const focal=displayFocal(w,h,shot?.sourceWidth||video.videoWidth||w,shot?.sourceHeight||video.videoHeight||h,fov);
 const current=norm((shot?.heading ?? heading)+az),currentPitch=(shot?.pitch ?? pitch)+el; $('headingText').textContent=current.toFixed(1)+'°';$('pitchText').textContent=currentPitch.toFixed(1)+'°';$('fovText').textContent=(2*Math.atan((w/(2*focal))/Number($('zoom').value))/RAD).toFixed(1)+'°';$('rollText').textContent=hasSensor?roll.toFixed(1)+'°':'—';if(!dem||!showLine)return;const ridgeFocal = focal * Number($('ridgeScale').value);
 const samples = [];
-const project=makeProject(w,h,current,currentPitch,(shot?.roll ?? roll)+rollCorrection,ridgeFocal,w*shift.x,h*shift.y);
+const bank=(shot?.roll ?? roll)+rollCorrection, pivot=pivotOffset(w,h,bank);
+const project=makeProject(w,h,current,currentPitch,bank,ridgeFocal,w*shift.x+pivot[0],h*shift.y+pivot[1]);
 c.save();
 for(const [group,lines] of dem.lines.entries()){
   c.beginPath();
@@ -1361,6 +1375,66 @@ function updateRidgeScale() {
 $('ridgeScale').oninput = updateRidgeScale;
 $('ridgeScale').onchange = () => {
   try { if (lensKey && !shot) localStorage.setItem(lensKey + ':ridge-scale', $('ridgeScale').value); } catch {}
+};
+function loadPivot(){
+  for(const id of ['pivotX','pivotY']){
+    let v=0;
+    try{v=Number(localStorage.getItem(lensKey+':'+id));}catch{}
+    $(id).value=Number.isFinite(v)?v:0;
+    $(id+'Value').textContent=$(id).value+'%';
+  }
+}
+for(const id of ['pivotX','pivotY']){
+  $(id).oninput=()=>{$(id+'Value').textContent=$(id).value+'%';draw();};
+  $(id).onchange=()=>{try{if(lensKey)localStorage.setItem(lensKey+':'+id,$(id).value);}catch{}};
+}
+$('resetPivot').onclick=()=>{
+  for(const id of ['pivotX','pivotY']){$(id).value=0;$(id).oninput();$(id).onchange();}
+};
+const scaleDialog=$('scaleDialog'), record=$('scaleRecord'), guide=$('scaleGuide');
+let reference=null, measuredScale=null;
+function cameraPoseReady(){
+  return !shot && following && hasSensor && performance.now()-lastSample<1500 && $('camera').videoWidth>0;
+}
+function scalePrompt(){
+  reference=null;measuredScale=null;record.hidden=false;record.textContent='中心を記録';
+  guide.textContent='遠くの峰を中央の十字に合わせ、1秒静止して記録してください。';
+}
+$('measureScale').onclick=()=>{
+  if(!cameraPoseReady()){say('ライブカメラとセンサー追従を開始してください。');return;}
+  settings(false);scalePrompt();scaleDialog.showModal();
+};
+$('scaleCancel').onclick=()=>scaleDialog.close();
+record.onclick=()=>{
+  if(measuredScale!==null){
+    $('ridgeScale').value=measuredScale;updateRidgeScale();$('ridgeScale').onchange();scaleDialog.close();say('稜線の倍率を '+$('ridgeValue').textContent+' に設定しました。');return;
+  }
+  if(!cameraPoseReady()){guide.textContent='カメラとセンサーの追従を確認してください。';return;}
+  const rect=$('view').getBoundingClientRect();
+  reference={heading,pitch,roll,w:rect.width,h:rect.height,angle:lastScreenAngle};
+  record.hidden=true;
+  guide.textContent='同じ場所でスマホを上か下へ6〜20°傾け、1秒静止してから同じ峰をタップしてください。';
+};
+scaleDialog.onclick=e=>{
+  if(e.target!==scaleDialog||!reference||measuredScale!==null)return;
+  const rect=$('view').getBoundingClientRect();
+  if(rect.width!==reference.w||rect.height!==reference.h||lastScreenAngle!==reference.angle){
+    scalePrompt();guide.textContent='画面の向きが変わりました。もう一度、峰を中央に合わせて記録してください。';return;
+  }
+  if(!cameraPoseReady()||Math.abs(pitch-reference.pitch)<6||Math.abs(pitch-reference.pitch)>25||
+     Math.abs(delta(heading,reference.heading))>4||Math.abs(delta(roll,reference.roll))>3){
+    guide.textContent='左右の向きと横倒し角を保ち、上下だけに6〜20°傾けて静止し、同じ峰をタップしてください。';return;
+  }
+  const q=makeProject(0,0,heading,pitch,roll,1)(reference.heading,reference.pitch);
+  if(!q)return;
+  const camera=$('camera'), focal=displayFocal(rect.width,rect.height,camera.videoWidth,camera.videoHeight,+$('fov').value)*Number($('zoom').value);
+  const dx=e.clientX-rect.left-rect.width/2,dy=e.clientY-rect.top-rect.height/2;
+  const scale=(dx*q[0]+dy*q[1])/(focal*(q[0]**2+q[1]**2));
+  if(!(scale>=0.25&&scale<=3)||Math.hypot(dx-focal*scale*q[0],dy-focal*scale*q[1])>Math.max(8,Math.hypot(dx,dy)*0.12)){
+    guide.textContent='傾きとタップ位置が一致しません。最初に選んだ峰をもう一度タップしてください。';return;
+  }
+  measuredScale=scale.toFixed(2);record.hidden=false;record.textContent='この倍率を使う';
+  guide.textContent='現在 '+$('ridgeValue').textContent+' → 測定 '+measuredScale+'倍';
 };
 function updateZoom() {
   const control = $('zoom');
