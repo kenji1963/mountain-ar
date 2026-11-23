@@ -1,4 +1,4 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v4.6</title><style>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AR山ナビ v4.7</title><style>
 :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0d1c29;color:#eef6fa;font:15px system-ui,-apple-system,sans-serif}header{padding:12px 15px;background:#18344a;display:flex;justify-content:space-between;align-items:center;gap:10px}header b{font-size:18px}.tag{font-size:11px;color:#b5d8e8}.wrap{max-width:850px;margin:auto}.view{position:relative;background:#060e16;aspect-ratio:4/3;overflow:hidden}video,canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.scene{position:absolute;inset:0;transform-origin:center}canvas{pointer-events:none}.hud{position:absolute;top:9px;left:9px;background:#0a2232c9;padding:7px 9px;border-radius:8px;font-size:12px;line-height:1.6}.cross{position:absolute;left:50%;top:50%;width:18px;height:18px;transform:translate(-50%,-50%);pointer-events:none}.cross:before,.cross:after{content:"";position:absolute;background:#ffffffa8}.cross:before{width:18px;height:1px;top:9px}.cross:after{height:18px;width:1px;left:9px}.panel{padding:12px 14px;border-bottom:1px solid #2b4d63}h3{margin:0 0 10px;font-size:15px}button{border:0;border-radius:10px;background:#54b3d0;color:#082435;padding:11px 13px;font-weight:700;font-size:14px;cursor:pointer}button.primary{background:#64d8b5}button.warn{background:#f0c56a}button:disabled{opacity:.45}.buttons{display:flex;gap:7px;flex-wrap:wrap}.buttons>*{flex:1 1 135px}label{display:block;margin:9px 0 5px}input[type=range]{width:100%;accent-color:#56c9e2}small,.hint{color:#b9cedb;font-size:12px;line-height:1.55}.metric{font-variant-numeric:tabular-nums;color:#8be6d5}#message{background:#213b4c;border-radius:8px;padding:10px;min-height:43px;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.map{height:185px;position:relative;overflow:hidden;border-radius:9px;background:#243e4e}.map img{width:100%;height:100%;object-fit:cover}.map span{position:absolute;bottom:6px;left:7px;background:#102634d9;font-size:11px;padding:4px;border-radius:4px}details summary{cursor:pointer;font-weight:700}footer{padding:12px 14px;color:#a6becd;font-size:11px;line-height:1.5}.fine{display:flex;align-items:center;gap:7px}.fine button{padding:8px 12px;min-width:42px}.fine input{flex:1;min-width:20px}#progress{height:5px;background:#274658;border-radius:4px;overflow:hidden;margin-top:8px}#bar{height:100%;background:#66d4b4;width:0%}@media(max-width:440px){.view{aspect-ratio:3/4}button{font-size:13px;padding:10px 8px}.grid{grid-template-columns:1fr 1fr}}
 .viewAction{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);width:max-content;max-width:95%}.viewAction button{box-shadow:0 2px 10px #0008;padding-inline:22px}button,.fine button,select{min-height:44px}button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid white;outline-offset:2px}.view{max-height:62svh}.hud summary{padding:4px;cursor:pointer}.actions #message{margin:0;padding:3px 0;min-height:0;background:none}.actions #progress{margin:0 0 8px}.actions #matchActions:not([hidden]){display:flex;gap:5px;flex-wrap:wrap;margin-bottom:8px}.actions #matchActions button{flex:1 1 auto}.actions #cancelMatch{background:transparent;color:white;border:1px solid #7794a6}.fine input[type=range]{min-height:36px}details>summary{min-height:36px;align-content:center}
 body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;background:#101920}.scene{touch-action:none}.cross{pointer-events:none}.wrap>header{position:fixed;z-index:2;top:max(10px,env(safe-area-inset-top));left:12px;background:#091621b8;border-radius:13px;padding:7px 10px;pointer-events:none}.wrap>header .tag:last-child{display:none}.wrap>header>div:first-child{display:flex;align-items:center;gap:8px}.wrap>header>div:first-child .tag{display:block}.wrap>header b{font-size:14px}.hud{top:auto;bottom:max(12px,env(safe-area-inset-bottom));left:10px;z-index:1}.hud summary{min-height:32px}.actions{position:fixed;z-index:2;bottom:max(9px,env(safe-area-inset-bottom));right:10px;left:10px;border:0;background:none;padding:0;display:flex;align-items:flex-end;flex-direction:column;gap:6px;pointer-events:none}.actions button,.actions output{pointer-events:auto}.actions button,#settings{background:#142633de;color:white;border:1px solid #ffffff65;border-radius:24px;padding:8px 14px;box-shadow:0 1px 5px #0006}.actions button.primary{background:#b4f3dc;color:#092b20}.viewAction{position:static;transform:none;max-width:none;width:auto}.actions>.fine{margin:0!important;gap:0}.actions>.fine span{display:none}.actions output{padding:7px;color:white;background:#142633de}.actions #message{position:absolute;right:0;bottom:100%;max-width:min(400px,95%);margin-bottom:7px;background:#102332df;border-radius:12px;padding:6px 10px;font-size:13px}.actions #matchActions:not([hidden]){margin:0;gap:4px}.actions #progress{width:min(280px,80vw)}body.frozen .actions>.fine{display:none}#settings{position:fixed;top:max(10px,env(safe-area-inset-top));right:12px;z-index:3}#sheet{position:fixed;z-index:4;top:max(9px,env(safe-area-inset-top));right:8px;width:min(390px,95vw);max-height:85dvh;overflow:auto;background:#152936f5;border-radius:16px;padding:9px;box-shadow:0 5px 24px #0008}#dismiss{display:block;margin-left:auto}.hud[open]{bottom:64px}body.frozen .hud{display:none}.actions [hidden],#sheet[hidden]{display:none}
@@ -6,7 +6,7 @@ body{overflow:hidden}.wrap{max-width:none}.view{position:fixed;inset:0;width:100
 body.frozen .view{inset:0;margin:auto;width:min(100vw,calc(100dvh * var(--shot-ratio)));height:min(100dvh,calc(100vw / var(--shot-ratio)))}
 #calDialog{background:#152936;color:white;border:1px solid #568293;border-radius:16px;width:min(85vw,360px);text-align:center}#calDialog::backdrop{background:#07131ac9}#calMark{font-size:68px;color:#94efd1}#calProgress{display:block;width:90%;margin:16px auto}#calGuide{min-height:4em}
 #focusRing{position:fixed;width:44px;height:44px;transform:translate(-50%,-50%);border:2px solid #ffdb73;border-radius:8px;box-shadow:0 0 3px #182327;pointer-events:none}
-#scaleDialog[open]{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:none;background:transparent;color:white;touch-action:manipulation}#scaleDialog::backdrop{background:transparent}#scaleBar{position:absolute;left:3%;right:3%;top:max(6px,env(safe-area-inset-top));padding:6px 10px;background:#102330ed;border-radius:10px}#scaleBar p{margin:2px 0 5px}#heightBar:not([hidden]){display:flex;gap:4px}body:has(#heightBar:not([hidden])) .actions> :not(#heightBar):not(#message){display:none}#tapMark{position:fixed;width:36px;height:36px;transform:translate(-50%,-50%);border:3px solid #ffcf57;border-radius:50%;box-shadow:0 0 0 2px #13232a,inset 0 0 0 1px #13232a;pointer-events:none}#tapMark.ok{border-color:#79ffb3}#tapStatus:not(:empty){display:block;color:#ffdc7c}#tapStatus.ok{color:#96ffc5}#heightBar button.pressed{background:#c1f8dd;color:#082324}button:active{filter:brightness(1.35)}</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v4.6</div></div><div class="tag">観測地点</div></header>
+#scaleDialog[open]{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:0;border:none;background:transparent;color:white;touch-action:manipulation}#scaleDialog::backdrop{background:transparent}#scaleBar{position:absolute;left:3%;right:3%;top:max(6px,env(safe-area-inset-top));padding:6px 10px;background:#102330ed;border-radius:10px}#scaleBar p{margin:2px 0 5px}#heightBar:not([hidden]){display:flex;gap:4px}body:has(#heightBar:not([hidden])) .actions> :not(#heightBar):not(#message){display:none}#tapMark{position:fixed;width:36px;height:36px;transform:translate(-50%,-50%);border:3px solid #ffcf57;border-radius:50%;box-shadow:0 0 0 2px #13232a,inset 0 0 0 1px #13232a;pointer-events:none}#tapMark.ok{border-color:#79ffb3}#tapStatus:not(:empty){display:block;color:#ffdc7c}#tapStatus.ok{color:#96ffc5}#heightBar button.pressed{background:#c1f8dd;color:#082324}button:active{filter:brightness(1.35)}</style></head><body><div class="wrap"><header><div><b>AR山ナビ</b><div class="tag">v4.7</div></div><div class="tag">観測地点</div></header>
 <div class="view" id="view"><div class="scene" id="scene"><video id="camera" autoplay playsinline muted></video><canvas hidden id="still"></canvas><canvas id="overlay"></canvas></div><div class="cross"></div><div hidden id="focusRing" aria-hidden="true"></div><canvas id="editSurface" hidden aria-label="写真上で稜線を編集"></canvas>
 <details class="hud"><summary>方位・センサー</summary><b id="siteName">地点未取得</b><br><span id="sensorStatus">センサー未開始</span><br>方位 <b class="metric" id="headingText">—</b>　仰角 <b class="metric" id="pitchText">—</b><br>傾き <b class="metric" id="rollText">—</b>　画角 <b class="metric" id="fovText">65°</b>　DEM <b class="metric" id="demText">未取得</b></details></div>
 <section class="panel actions"><div id="heightBar" hidden aria-label="上下の位置合わせ"><button id="ridgeUp" aria-label="稜線を上へ">▲ 上へ</button> <button id="ridgeDown" aria-label="稜線を下へ">▼ 下へ</button> <button id="heightDone">完了</button></div><div class="viewAction">
@@ -896,6 +896,22 @@ function setMatchValues(values) {
   }
 }
 let shift={x:0,y:0};
+// Store translations in upright portrait axes so a correction follows the ridge through roll.
+function rotateShift(x,y,angle){
+  const c=Math.cos(angle*RAD), sn=Math.sin(angle*RAD);
+  return {x:c*x-sn*y,y:sn*x+c*y};
+}
+function screenShift(w,h){
+  return rotateShift(shift.x*Math.min(w,h),shift.y*Math.max(w,h),shot?.roll??roll);
+}
+function uprightShift(rect,x,y){
+  const point=rotateShift(x,y,-(shot?.roll??roll));
+  return {x:point.x/Math.min(rect.width,rect.height),y:point.y/Math.max(rect.width,rect.height)};
+}
+function moveShift(rect,x,y){
+  const change=uprightShift(rect,x,y);
+  shift.x+=change.x;shift.y+=change.y;
+}
 function restoreAlignment(){
   let saved=null;
   try{
@@ -931,7 +947,7 @@ function beginPair() {
   if(touches.size!==2)return;
   const pair=pairPose(),rect=$('view').getBoundingClientRect();
   if(pair.d<6)return;
-  gesture={pair,rect,scale:Number($('ridgeScale').value),roll:rollCorrection,shift:{...shift}};
+  gesture={pair,rect,scale:Number($('ridgeScale').value),roll:rollCorrection,shift:screenShift(rect.width,rect.height)};
 }
 function canAdjustRidge(){
   return shot ? shot.manual && editor.hidden : Boolean(cameraStream && dem && showLine);
@@ -945,12 +961,12 @@ $('adjustHeight').onclick=()=>{
 };
 for(const [id,dy] of [['ridgeUp',-4],['ridgeDown',4]]){
   $(id).onclick=()=>{
-    const height=$('view').getBoundingClientRect().height, zoom=shot?.z ?? Number($('zoom').value);
+    const rect=$('view').getBoundingClientRect(), zoom=shot?.z ?? Number($('zoom').value);
     const button=$(id);
     clearTimeout(button.feedbackTimer);button.classList.add('pressed');
     button.feedbackTimer=setTimeout(()=>button.classList.remove('pressed'),320);
     say(dy<0?'稜線を上へ移動しました':'稜線を下へ移動しました');
-    shift.y+=dy/(height*zoom);
+    moveShift(rect,0,dy/zoom);
     draw();
   };
 }
@@ -1014,8 +1030,7 @@ scene.addEventListener('pointermove',e=>{
   touches.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(touches.size===1){
     const rect=$('view').getBoundingClientRect();
-    shift.x+=(e.clientX-previous.x)/(rect.width*z);
-    shift.y+=(e.clientY-previous.y)/(rect.height*z);
+    moveShift(rect,(e.clientX-previous.x)/z,(e.clientY-previous.y)/z);
     draw();return;
   }
   if(!gesture){beginPair();return;}
@@ -1024,9 +1039,9 @@ scene.addEventListener('pointermove',e=>{
   scale.value=Math.max(+scale.min,Math.min(+scale.max,g.scale*now.d/g.pair.d));
   const ratio=Number(scale.value)/g.scale, angle=now.a-g.pair.a;
   const cx=rect.left+rect.width/2,cy=rect.top+rect.height/2;
-  const dx=g.shift.x*rect.width*z-(g.pair.x-cx),dy=g.shift.y*rect.height*z-(g.pair.y-cy);
-  shift={x:(now.x-cx+ratio*(Math.cos(angle)*dx-Math.sin(angle)*dy))/(rect.width*z),
-         y:(now.y-cy+ratio*(Math.sin(angle)*dx+Math.cos(angle)*dy))/(rect.height*z)};
+  const dx=g.shift.x*z-(g.pair.x-cx),dy=g.shift.y*z-(g.pair.y-cy);
+  shift=uprightShift(rect,(now.x-cx+ratio*(Math.cos(angle)*dx-Math.sin(angle)*dy))/z,
+    (now.y-cy+ratio*(Math.sin(angle)*dx+Math.cos(angle)*dy))/z);
   rollCorrection=g.roll+angle/RAD;
   updateRidgeScale();
 });
@@ -1389,7 +1404,8 @@ const focal=displayFocal(w,h,shot?.sourceWidth||video.videoWidth||w,shot?.source
 const current=norm((shot?.heading ?? heading)+az),currentPitch=(shot?.pitch ?? pitch)+el; $('headingText').textContent=current.toFixed(1)+'°';$('pitchText').textContent=currentPitch.toFixed(1)+'°';$('fovText').textContent=(2*Math.atan((w/(2*focal))/Number($('zoom').value))/RAD).toFixed(1)+'°';$('rollText').textContent=hasSensor?roll.toFixed(1)+'°':'—';if(!dem||!showLine)return;const ridgeFocal = focal * Number($('ridgeScale').value);
 const samples = [];
 const bank=(shot?.roll ?? roll)+rollCorrection, pivot=pivotOffset(w,h,bank);
-const project=makeProject(w,h,current,currentPitch,bank,ridgeFocal,w*shift.x+pivot[0],h*shift.y+pivot[1]);
+const translation=screenShift(w,h);
+const project=makeProject(w,h,current,currentPitch,bank,ridgeFocal,translation.x+pivot[0],translation.y+pivot[1]);
 c.save();
 for(const [group,lines] of dem.lines.entries()){
   c.beginPath();
@@ -1488,8 +1504,8 @@ function projectReference(rect,f,xRatio=horizontalRatio){
 }
 function measurePivotTap(e,rect){
   const bank=delta(roll,reference.roll);
-  if(Math.abs(bank)<15 || Math.abs(bank)>85){
-    guide.textContent='横に回した角度は '+Math.round(Math.abs(bank))+'°です。約30°にして、同じ目印をタップしてください。';return;
+  if(Math.abs(bank)<15){
+    guide.textContent='横に回した角度は '+Math.round(Math.abs(bank))+'°です。30°以上回して、同じ目印をタップしてください。';return;
   }
   const video=$('camera'), zoom=Number($('zoom').value);
   const f=displayFocal(rect.width,rect.height,video.videoWidth,video.videoHeight,Number($('fov').value))*zoom*Number($('ridgeScale').value);
@@ -1539,7 +1555,7 @@ function recordReference(e){
   clearTap();$('tapStatus').textContent='✓ 1回目を記録しました';$('tapStatus').classList.add('ok');
   record.hidden=true;$('pivotRetry').hidden=false;
   if(pivotMode){
-    guide.textContent='スマホをハンドルのように約40°回し、1秒止めて同じ目印をタップ。';return;
+    guide.textContent='画面の自動回転をロックし、スマホを約40°または逆さまで回します。1秒止めて同じ目印をタップ。';return;
   }
   if(horizontalMeasurement){guide.textContent='カメラを水平に左右どちらかへ約10°振り、1秒静止して同じ目印をタップ。';return;}
   guide.textContent='同じ場所でスマホを上か下へ6〜20°傾け、1秒静止してから同じ峰をタップしてください。';
